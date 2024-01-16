@@ -32,6 +32,8 @@ app.UseEndpoints(endpoints =>
 
 {
     endpoints.MapHub<MyFirstHub>("/myfirsthub");
+    endpoints.MapHub<MessageHub>("/messagehub");
+    endpoints.MapControllers();
 });
 app.UseHttpsRedirection();
 
