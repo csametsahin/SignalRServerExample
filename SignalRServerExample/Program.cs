@@ -1,3 +1,4 @@
+using SignalRServerExample.Business;
 using SignalRServerExample.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +17,7 @@ builder.Services.AddSignalR();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddTransient<BusinessHub>();
 var app = builder.Build();
 app.UseCors();
 app.UseRouting();
